@@ -1,4 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Débuter sur Nextjs 
+
+Voici un projet Nextjs fraîchement initialisé avec Biome. Cette configuration bien que basique me semble idéale pour commencer à s'entrainer sur cet outil. 
+
+🛠️ Ce projet sera évolutif au fil de ma découverte de l'outil ! D'autres branches viendront surement avec une configuration plus avancée du projet !
+
+## Pour commencer 2 options : 
+
+  ### 1. Fork :
+    
+  - Fork ce GitRepository pour en créer une copie dans vos propres Repository GitHub.
+  - <code>git clone</code> depuis <strong>VOTRE</strong> repository pour récupérer le projet le projet sur votre machine.
+  - Sans oublier <code>npm i</code> bien évidemment.
+
+  ### 2. Initialiser vous même le projet :
+
+  - Créez un repository <strong>vide</strong> sur GitHub
+  - <code>npx create-next-app@latest &lt;nom-du-projet&gt;</code> Initialise le projet Nextjs (❗Le nom du projet doit être en minuscules)
+  <img width="716" height="131" alt="image" src="https://github.com/user-attachments/assets/a60d6815-10c5-4fd8-ad01-100381c1a211" />
+  
+  - <code>cd &lt;nom-du-projet&gt;</code>
+  - <code>npx @biomejs/biome init</code>
+  - <code>npx biome migrate eslint</code>
+  - <code>npx biome migrate prettier</code>
+  - <code>npm install --save-dev --save-exact @biomejs/biome</code>
+  - <code>git remote add origin &lt;clef-SSH-du-repo-initialisé-au-début&gt;</code>
+  - Quelques petits ajustements dans 2 fichiers :
+
+  #### next.config.ts
+  ```ts
+  import type { NextConfig } from "next";
+
+  const nextConfig: NextConfig = {
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
+  };
+
+  export default nextConfig;
+  ```
+
+  #### package.json
+  ```json
+  "scripts": {
+    "biome:check": "biome check --apply --organize-imports .",
+    "biome:format": "biome format --write .",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  ```
+
+## Et Zé Bartiiii !!!
+
+Vous voici prêts pour débuter votre nouvel apprentissage de cette techno !!
+
+NB: La suite de ce Readme est celui créé à l'initialisation d'un projet Nextjs
+
+  
 
 ## Getting Started
 
